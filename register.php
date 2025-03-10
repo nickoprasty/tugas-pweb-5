@@ -5,12 +5,12 @@
 
     if(isset($_SESSION["is_login"])){
         header("location: dashboard.php");
-        $hash_password = hash("sha256", $password);
+        
     }
     if(isset($_POST['register'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        
+        $hash_password = hash("sha256", $password);
         try{
             $sql = "INSERT INTO user (username, password) VALUES ('$username', '$hash_password')";
 
